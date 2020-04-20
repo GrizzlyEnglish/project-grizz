@@ -1,0 +1,257 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+/*
+
+    primary: #7B1E7A
+    seconday: #B33F62   
+    highlight: #F9564F
+    seconday_highlight: #F3C677
+    text: #232E21
+
+*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+}
+
+.c-nav-link, label {
+    color: #232e21;
+    border-bottom: 1px solid transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.c-nav-link:after, label:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #f3c677;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.c-nav-link:hover:after, label:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+.row {
+    margin-top: 15px;
+}
+
+nav {
+    margin-bottom: 50px;
+    z-index: 10;
+}
+
+.nav-item {
+    margin-right: 25px;
+}
+
+.c-logo-link {
+    border-radius: 50%;
+    font-size: 22px;
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.c-logo-link > a {
+    padding: 7px;
+    color: white;
+}
+
+.-bg-primary {
+    background-color: #7B1E7A;
+}
+
+.-bg-secondary {
+    background-color: #B33F62;
+}
+
+.-bg-highlight {
+    background-color: #F9564F;
+}
+
+.-bg-secondary-highlight {
+    background-color: #F3C677;
+}
+
+.c-intro-container {
+    height: 100vh;
+}
+
+.c-intro-container > .side {
+    float: left;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.c-title-container {
+    float: right;
+    text-align: right;
+    top: 25%;
+    position: relative;
+}
+
+.c-title-container h1 {
+    font-size: 7rem;
+}
+
+.c-title-container p {
+    font-size: 1.25rem;
+}
+
+.c-logo-container {
+    position: relative;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.c-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 59%;
+    overflow: hidden;
+}
+
+.c-gradient:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #7B1E7A;
+}
+
+.c-gradient:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: 100%;
+    width: 10000px;
+    height: 100%;
+    background-color: #fff;
+    transform-origin: bottom right;
+    -webkit-transform: skewX(150deg);
+    -moz-transform: skewX(150deg);
+    -ms-transform: skewX(150deg);
+    -o-transform: skewX(150deg);
+    transform: skewX(150deg);
+}
+
+.c-gradient-background {
+    background-image: url('/img/grizz_logo_5v1.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -3;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    opacity: .3;
+    overflow: hidden;
+    background-size: 600px;
+}
+
+.c-info-container h4 {
+    border-bottom: 2px solid #F9564F;
+    padding-bottom: 5px;
+}
+
+.c-info-container a {
+    text-transform: capitalize;
+    color: #7B1e7a;
+    font-weight: bold;
+}
+
+.c-info-container a:hover {
+    color: #f3c677;
+}
+
+.c-me {
+    width: 250px;
+    border-radius: 150px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 1px 1px 8px #232E21;
+}
+
+.u-highlight {
+    background-color: #F3C677;
+    color: #7B1e7a;
+    font-weight: bold;
+}
+
+.c-timeline {
+    list-style-type: none;
+}
+
+.c-timeline:before {
+    content: ' ';
+    background: #7B1E7A;
+    position: absolute;
+    left: 27px;
+    width: 5px;
+    height: 95%;
+}
+
+.c-timeline > li {
+    margin: 20px 0;
+}
+
+.c-timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 20%;
+    border: 3px solid #f3c677;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+.c-timeline h5:nth-child(1) {
+    display: inline-block;
+}
+
+.c-timeline h5:nth-child(2) {
+    float: right;
+}
+
+.c-timeline h6 {
+    color: #F9564F;
+}
+
+@media (max-width: 600px) {
+    .c-title-container h1 {
+        font-size: 2rem;
+    }
+
+    .c-gradient {
+        width: 90%;
+    }
+}
