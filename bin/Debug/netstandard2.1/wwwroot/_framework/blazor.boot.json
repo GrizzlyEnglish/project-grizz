@@ -6,7 +6,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "project-grizz.dll": "sha256-aW7Jfk6xOkhBef8QRK2EUM8mI62bEQx+XF\/Ts7iyybo=",
+      "project-grizz.dll": "sha256-end25sxMPMc9s8anJdG9b4YP2mloe0amM+8pBQ3aEaU=",
       "Microsoft.Extensions.DependencyInjection.Abstractions.dll": "sha256-ye2f6g9b5EFwzv\/4ts75giTehIAZ9s0Z4zHQIu1DDqg=",
       "netstandard.dll": "sha256-\/zcPVM75OAY+joGVM8yIC1gO1SFYWP1CFERgQ8PJkfA=",
       "System.Xml.Linq.dll": "sha256-K6HLnQlQSdE7ldv4wMV9PqfWjOtBoW5nl3R\/XUF9bg4=",
@@ -57,7 +57,7 @@
       "System.ComponentModel.DataAnnotations.dll": "sha256-4vEvGLztX42bc61\/obHWFyGEOZkoMNPNAgycgz8WZqg="
     },
     "pdb": {
-      "project-grizz.pdb": "sha256-uCzG7Qwrp\/Q9tBza5uIetsEmS1\/DzN4Dg2anVPEBnY4="
+      "project-grizz.pdb": "sha256-OdvF33eERWSlSIfEeTWl2mpdobsKQmEbQ7JMYFqBOrk="
     },
     "runtime": {
       "dotnet.3.2.0-preview3.20168.1.js": "sha256-274clLanSGrn5tb3h9iFyKyVG0KYG2Um+VHF0kdNzHE=",
