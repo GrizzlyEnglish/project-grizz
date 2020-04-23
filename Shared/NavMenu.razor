@@ -1,39 +1,33 @@
 ﻿<nav class="navbar navbar-expand-lg">
   <div class="collapse navbar-collapse @NavMenuCssClass" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link c-nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link c-nav-link" href="#">Skills</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link c-nav-link" href="#">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link c-nav-link"  href="#">Work History</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link c-nav-link" href="#">Resume</a>
-      </li>
-      <li class="nav-item">
+
+      @foreach (var item in routes)
+      {
+        <li class="nav-item active">
+          <a class="nav-link c-nav-link btn btn-link" onclick="document.getElementById('@item.ToLower()').scrollIntoView({behavior:'smooth'})">@item</a>
+        </li>
+      }
+
+      <li class="nav-item" style="display: none;">
+        <!-- TODO -->
         <a class="nav-link c-nav-link"  href="/blog">Blog</a>
       </li>
     </ul>
 
     <ul class="navbar-nav ml-auto">
         <li class="nav-item c-logo-link -bg-highlight">
-            <a href="" class="">
+            <a href="https://github.com/GrizzlyEnglish">
                 <i class="fab fa-github"></i>
             </a>
         </li>
         <li class="nav-item c-logo-link -bg-secondary">
-            <a href="" class="">
+            <a href=https://www.linkedin.com/in/grizzlyenglish/">
                 <i class="fab fa-linkedin"></i>
             </a>
         </li>
         <li class="nav-item c-logo-link -bg-secondary-highlight">
-            <a href="" class="">
+            <a href="https://www.hackerrank.com/profile/grizzlyenglish">
                 <i class="fab fa-hackerrank"></i>
             </a>
         </li>
@@ -42,6 +36,11 @@
 </nav>
 
 @code {
+
+    private List<string> routes = new List<string>() {
+        "About", "Skills", "Projects", "Work History"
+      };
+
     private bool collapseNavMenu = false;
 
     private string NavMenuCssClass => collapseNavMenu ? "show" : null;

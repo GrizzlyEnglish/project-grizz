@@ -25,6 +25,10 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+.c-nav-link {
+    cursor: pointer;
+}
+
 .c-nav-link:after, label:after {    
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
@@ -103,7 +107,7 @@ nav {
 .c-title-container {
     float: right;
     text-align: right;
-    top: 25%;
+    top: 15%;
     position: relative;
 }
 

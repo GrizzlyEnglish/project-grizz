@@ -1,0 +1,18 @@
+<div class="c-intro-container">
+
+    <div class="side">
+        <div class="c-title-container">
+            @ChildContent
+        </div>
+    </div>
+
+    <div class="c-gradient"></div>
+
+    <div class="c-gradient-background"></div>
+
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

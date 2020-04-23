@@ -9,14 +9,14 @@
     "TagHelpers": [
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.App",
+        "Name": "project_grizz.Shared.Work",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App",
+            "TagName": "Work",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -28,19 +28,19 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.App"
+          "Common.TypeName": "project_grizz.Shared.Work"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.App",
+        "Name": "project_grizz.Shared.Work",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "project_grizz.App",
+            "TagName": "project_grizz.Shared.Work",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -52,20 +52,20 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.App",
+          "Common.TypeName": "project_grizz.Shared.Work",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.Pages.Blog",
+        "Name": "project_grizz.Shared.Projects",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Blog",
+            "TagName": "Projects",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -77,19 +77,19 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Pages.Blog"
+          "Common.TypeName": "project_grizz.Shared.Projects"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.Pages.Blog",
+        "Name": "project_grizz.Shared.Projects",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "project_grizz.Pages.Blog",
+            "TagName": "project_grizz.Shared.Projects",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -101,56 +101,7 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Pages.Blog",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "project_grizz.Pages.Index",
-        "AssemblyName": "project-grizz",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Pages.Index"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "project_grizz.Pages.Index",
-        "AssemblyName": "project-grizz",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "project_grizz.Pages.Index",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Pages.Index",
+          "Common.TypeName": "project_grizz.Shared.Projects",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -205,55 +156,6 @@
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.Shared.NavMenu",
-        "AssemblyName": "project-grizz",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Shared.NavMenu"
-        }
-      },
-      {
-        "Kind": "Components.Component",
-        "Name": "project_grizz.Shared.NavMenu",
-        "AssemblyName": "project-grizz",
-        "Documentation": null,
-        "TagOutputHint": null,
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "project_grizz.Shared.NavMenu",
-            "ParentTag": null,
-            "TagStructure": 0,
-            "Attributes": [],
-            "Diagnostics": []
-          }
-        ],
-        "BoundAttributes": [],
-        "AllowedChildTags": [],
-        "Diagnostics": [],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "Kind": "Components.Component",
         "Name": "project_grizz.Shared.Skills",
         "AssemblyName": "project-grizz",
         "Documentation": null,
@@ -303,39 +205,96 @@
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.Shared.Work",
+        "Name": "project_grizz.Shared.TitleCard",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Work",
+            "TagName": "TitleCard",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
             "Diagnostics": []
           }
         ],
-        "BoundAttributes": [],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "ChildContent",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "IsEnum": false,
+            "IndexerNamePrefix": null,
+            "IndexerTypeName": null,
+            "Documentation": null,
+            "Diagnostics": [],
+            "Metadata": {
+              "Common.PropertyName": "ChildContent",
+              "Components.ChildContent": "True"
+            },
+            "BoundAttributeParameters": []
+          }
+        ],
         "AllowedChildTags": [],
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Shared.Work"
+          "Common.TypeName": "project_grizz.Shared.TitleCard"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.Shared.Work",
+        "Name": "project_grizz.Shared.TitleCard",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "project_grizz.Shared.Work",
+            "TagName": "project_grizz.Shared.TitleCard",
             "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "ChildContent",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "IsEnum": false,
+            "IndexerNamePrefix": null,
+            "IndexerTypeName": null,
+            "Documentation": null,
+            "Diagnostics": [],
+            "Metadata": {
+              "Common.PropertyName": "ChildContent",
+              "Components.ChildContent": "True"
+            },
+            "BoundAttributeParameters": []
+          }
+        ],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "project_grizz.Shared.TitleCard",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.ChildContent",
+        "Name": "project_grizz.Shared.TitleCard.ChildContent",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ChildContent",
+            "ParentTag": "TitleCard",
             "TagStructure": 0,
             "Attributes": [],
             "Diagnostics": []
@@ -345,8 +304,34 @@
         "AllowedChildTags": [],
         "Diagnostics": [],
         "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Shared.Work",
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "project_grizz.Shared.TitleCard.ChildContent",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "Kind": "Components.ChildContent",
+        "Name": "project_grizz.Shared.TitleCard.ChildContent",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ChildContent",
+            "ParentTag": "project_grizz.Shared.TitleCard",
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "project_grizz.Shared.TitleCard.ChildContent",
+          "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -484,14 +469,14 @@
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.Shared.Projects",
+        "Name": "project_grizz.Shared.NavMenu",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Projects",
+            "TagName": "NavMenu",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -503,19 +488,19 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Shared.Projects"
+          "Common.TypeName": "project_grizz.Shared.NavMenu"
         }
       },
       {
         "Kind": "Components.Component",
-        "Name": "project_grizz.Shared.Projects",
+        "Name": "project_grizz.Shared.NavMenu",
         "AssemblyName": "project-grizz",
         "Documentation": null,
         "TagOutputHint": null,
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "project_grizz.Shared.Projects",
+            "TagName": "project_grizz.Shared.NavMenu",
             "ParentTag": null,
             "TagStructure": 0,
             "Attributes": [],
@@ -527,7 +512,154 @@
         "Diagnostics": [],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "project_grizz.Shared.Projects",
+          "Common.TypeName": "project_grizz.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "project_grizz.App",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "project_grizz.App"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "project_grizz.App",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "project_grizz.App",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "project_grizz.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "project_grizz.Pages.Index",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Index",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "project_grizz.Pages.Index"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "project_grizz.Pages.Index",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "project_grizz.Pages.Index",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "project_grizz.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "project_grizz.Pages.Blog",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Blog",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "project_grizz.Pages.Blog"
+        }
+      },
+      {
+        "Kind": "Components.Component",
+        "Name": "project_grizz.Pages.Blog",
+        "AssemblyName": "project-grizz",
+        "Documentation": null,
+        "TagOutputHint": null,
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "project_grizz.Pages.Blog",
+            "ParentTag": null,
+            "TagStructure": 0,
+            "Attributes": [],
+            "Diagnostics": []
+          }
+        ],
+        "BoundAttributes": [],
+        "AllowedChildTags": [],
+        "Diagnostics": [],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "project_grizz.Pages.Blog",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -16624,6 +16756,11 @@
     {
       "FilePath": "c:\\Users\\formy\\Workspace\\project-grizz\\Shared\\About.razor",
       "TargetPath": "Shared\\About.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\formy\\Workspace\\project-grizz\\Shared\\TitleCard.razor",
+      "TargetPath": "Shared\\TitleCard.razor",
       "FileKind": "component"
     },
     {

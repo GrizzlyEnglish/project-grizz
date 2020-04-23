@@ -1,26 +1,28 @@
 ﻿@page "/"
 
-<div class="c-intro-container">
-
-    <div class="side">
-        <div class="c-title-container">
-            <h1>Grizzly</h1>
-            <h1>English</h1>
-            <p>A software engineers potfolio</p>
-        </div>
-    </div>
-
-    <div class="c-gradient"></div>
-
-    <div class="c-gradient-background"></div>
-
-</div>
+<TitleCard>
+    <h4>the</h4>
+    <h1>Grizzly</h1>
+    <h1>English</h1>
+    <p>A software engineers potfolio</p>
+</TitleCard>
 
 <div class="container c-info-container">
-    <About />
-    <Skills />
-    <Projects />
-    <Work />
+    <div id="about">
+        <About />
+    </div>
+
+    <div id="skills">
+        <Skills />
+    </div>
+
+    <div id="projects">
+        <Projects />
+    </div>
+
+    <div id="work">
+        <Work />
+    </div>
 
     <footer>
         <p>Icons Provided by <a href="https://fontawesome.com">Font Awesome</a> and <a href="https://icons8.com">Icons8</a></p>
