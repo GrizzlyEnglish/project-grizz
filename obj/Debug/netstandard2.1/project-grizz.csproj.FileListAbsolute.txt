@@ -287,3 +287,5 @@ C:\Users\formy\Workspace\project-grizz\obj\Debug\netstandard2.1\RazorDeclaration
 C:\Users\formy\Workspace\project-grizz\obj\Debug\netstandard2.1\Razor\Shared\Work.razor.g.cs
 C:\Users\formy\Workspace\project-grizz\obj\Debug\netstandard2.1\RazorDeclaration\Shared\TitleCard.razor.g.cs
 C:\Users\formy\Workspace\project-grizz\obj\Debug\netstandard2.1\Razor\Shared\TitleCard.razor.g.cs
+C:\Users\formy\Workspace\project-grizz\obj\Debug\netstandard2.1\RazorDeclaration\Shared\Education.razor.g.cs
+C:\Users\formy\Workspace\project-grizz\obj\Debug\netstandard2.1\Razor\Shared\Education.razor.g.cs

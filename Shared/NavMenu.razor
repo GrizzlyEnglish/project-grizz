@@ -1,16 +1,10 @@
 ﻿<nav class="navbar navbar-expand-lg">
   <div class="collapse navbar-collapse @NavMenuCssClass" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
-      @foreach (var item in routes)
-      {
-        <li class="nav-item active">
-          <a class="nav-link c-nav-link btn btn-link" onclick="document.getElementById('@item.ToLower()').scrollIntoView({behavior:'smooth'})">@item</a>
-        </li>
-      }
-
-      <li class="nav-item" style="display: none;">
-        <!-- TODO -->
+      <li class="nav-item">
+        <a class="nav-link c-nav-link"  href="/">Portfolio</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link c-nav-link"  href="/blog">Blog</a>
       </li>
     </ul>
@@ -36,10 +30,6 @@
 </nav>
 
 @code {
-
-    private List<string> routes = new List<string>() {
-        "About", "Skills", "Projects", "Work History"
-      };
 
     private bool collapseNavMenu = false;
 
