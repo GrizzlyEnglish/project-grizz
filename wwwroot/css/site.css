@@ -94,7 +94,7 @@ nav {
 }
 
 .c-intro-container {
-    height: 100vh;
+    height: Calc(100vh - 150px);
 }
 
 .c-intro-container > .side {
@@ -248,7 +248,7 @@ nav {
 }
 
 .c-uofl {
-    height: 125px;
+    height: 10vh;
 }
 
 .c-arrow-container {
@@ -364,7 +364,15 @@ nav {
 
     .c-mobile-logo {
         display: initial;
-        width: 100px;
+        margin-left: auto;
+    }
+
+    .c-mobile-logo img {
+        width: 75px;
+    }
+
+    .c-intro-container > .side {
+        height: initial;
     }
 
 }
