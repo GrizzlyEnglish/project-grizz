@@ -260,6 +260,11 @@ nav {
     width: 100px;
 }
 
+
+.c-mobile-logo {
+    display: none;
+}
+
 .arrow {
   opacity: 0;
   position: absolute;
@@ -325,13 +330,22 @@ nav {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     .c-title-container h1 {
         font-size: 4rem;
     }
 
     .c-gradient {
         width: 90%;
+    }
+
+    .c-gradient-background {
+        width: 80%;
+        right: -125px;
+    }
+
+    .navbar-nav {
+        flex-direction: inherit;
     }
 }
 
@@ -343,6 +357,16 @@ nav {
     .c-gradient {
         width: 90%;
     }
+
+    .c-gradient-background {
+        display: none;
+    }
+
+    .c-mobile-logo {
+        display: initial;
+        width: 100px;
+    }
+
 }
 
 
