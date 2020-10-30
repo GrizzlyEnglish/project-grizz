@@ -172,11 +172,11 @@ nav {
     z-index: -3;
     top: 0;
     right: 0;
-    height: 100%;
-    width: 50%;
+    height: 90%;
+    width: 40%;
     opacity: .3;
     overflow: hidden;
-    background-size: 600px;
+    background-size: 400px;
 }
 
 .c-info-container h4 {
