@@ -1,5 +1,20 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+@font-face {
+    font-family: Cinzel;
+    src: url('../webfonts/Cinzel-Bold.ttf');
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../webfonts/Montserrat.ttf');
+}
+
+@font-face {
+    font-family: Pacifico;
+    src: url('../webfonts/Pacifico.ttf');
+}
+
 /*
 
     primary: #7B1E7A
@@ -164,21 +179,6 @@ nav {
     transform: skewX(150deg);
 }
 
-.c-gradient-background {
-    background-image: url('/img/grizz_logo_5v1.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -3;
-    top: 0;
-    right: 0;
-    height: 90%;
-    width: 40%;
-    opacity: .3;
-    overflow: hidden;
-    background-size: 400px;
-}
-
 .c-info-container h4 {
     border-bottom: 2px solid #F9564F;
     padding-bottom: 5px;
@@ -302,6 +302,10 @@ nav {
           transform: rotate(-45deg) translateX(23%);
   -webkit-transform-origin: top right;
           transform-origin: top right;
+}
+
+.project-logo {
+    max-width: 150px;
 }
 
 @-webkit-keyframes arrow-movement {
