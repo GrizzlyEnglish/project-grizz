@@ -9,16 +9,16 @@
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="css/all.min.css" rel="stylesheet" />
-    <meta property='description' content='Ryan English Personal Portfolio'/>
-    <meta property='og:title' content='Ryan English Personal Portfolio'/>
-    <meta property='og:image' content='https://thegrizzlyenglish.com/img/grizz_logo_5v1.png'/>
-    <meta property='og:description' content='Ryan English Personal Portfolio'/>
-    <meta property='og:url' content='https://thegrizzlyenglish.com'/>
+    <meta property='description' content='Ryan English Personal Portfolio' />
+    <meta property='og:title' content='Ryan English Personal Portfolio' />
+    <meta property='og:image' content='https://thegrizzlyenglish.com/img/grizz_logo_5v1.png' />
+    <meta property='og:description' content='Ryan English Personal Portfolio' />
+    <meta property='og:url' content='https://thegrizzlyenglish.com' />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76792565-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-76792565-2');
@@ -31,6 +31,18 @@
     </app>
 
     <script src="_framework/blazor.webassembly.js" integrity=""></script>
+    <script>
+        function BlazorScrollToId(id) {
+            const element = document.getElementById(id);
+            if (element instanceof HTMLElement) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest"
+                });
+            }
+        }
+    </script>
 </body>
 
 </html>

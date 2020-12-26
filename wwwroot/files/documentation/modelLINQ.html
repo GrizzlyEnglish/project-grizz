@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            .container {
+                width: 60%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+            }
+        </style>
+    </head>
+    <body>
+
+<div class="container">
+<p><a name='assembly'></a> modelLINQ Documentation</p>
+<p>
+    This was built via Visual Studio and converted to markdown by <a href="https://github.com/lijunle/Vsxmd">Vsxmd</a>
+</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#T-modelLINQ-BindingExtension" title="modelLINQ.BindingExtension">BindingExtension</a></li>
+<li><a href="#M-modelLINQ-BindingExtension-DirectBind``1-System-Linq-Expressions-Expression-" title="modelLINQ.BindingExtension.DirectBind``1(System.Linq.Expressions.Expression)">DirectBind``1(param)</a></li>
+<li><a href="#M-modelLINQ-BindingExtension-DirectBind``1-System-Linq-Expressions-Expression,System-String-" title="modelLINQ.BindingExtension.DirectBind``1(System.Linq.Expressions.Expression,System.String)">DirectBind``1(param,propName)</a></li>
+<li><a href="#M-modelLINQ-BindingExtension-DirectBind``1-System-Linq-Expressions-Expression,System-String,System-String[]-" title="modelLINQ.BindingExtension.DirectBind``1(System.Linq.Expressions.Expression,System.String,System.String[])">DirectBind``1(param,bindPropname,propNames)</a></li>
+<li><a href="#M-modelLINQ-BindingExtension-PropertyHasValue``2-System-Linq-Expressions-Expression,System-String,System-String-" title="modelLINQ.BindingExtension.PropertyHasValue``2(System.Linq.Expressions.Expression,System.String,System.String)">PropertyHasValue``2(param,propName,bindToPropertyName)</a></li>
+<li><a href="#T-modelLINQ-ListExtension" title="modelLINQ.ListExtension">ListExtension</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindFilteredItem``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-" title="modelLINQ.ListExtension.BindFilteredItem``3(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]})">BindFilteredItem``3(param,bindingPropertyName,predicateGenerator,bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindFilteredItem``3-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-" title="modelLINQ.ListExtension.BindFilteredItem``3(System.Linq.Expressions.Expression,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]})">BindFilteredItem``3(param,bindingPropertyName,paramPropertyName,predicateGenerator,bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindFilteredList``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-" title="modelLINQ.ListExtension.BindFilteredList``3(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]})">BindFilteredList``3(param,bindingPropertyName,predicateGenerator,bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindFilteredList``3-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-" title="modelLINQ.ListExtension.BindFilteredList``3(System.Linq.Expressions.Expression,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]})">BindFilteredList``3(param,bindingPropertyName,paramPropertyName,predicateGenerator,bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedFilteredItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedFilteredItem``4(System.Linq.Expressions.Expression,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedFilteredItem``4(param,bindingPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedFilteredItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedFilteredItem``4(System.Linq.Expressions.Expression,System.String,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedFilteredItem``4(param,bindingPropertyName,paramPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedFilteredList``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedFilteredList``4(System.Linq.Expressions.Expression,System.String,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedFilteredList``4(param,bindingPropertyName,paramPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedFilteredList``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedFilteredList``4(System.Linq.Expressions.Expression,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedFilteredList``4(param,bindingPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedItem``4(System.Linq.Expressions.Expression,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedItem``4(param,bindingPropertyName,orderByProperty,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedItem``4(System.Linq.Expressions.Expression,System.String,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedItem``4(param,bindingPropertyName,paramPropertyName,orderByProperty,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedList``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedList``4(System.Linq.Expressions.Expression,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedList``4(param,bindingPropertyName,orderByProperty,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindOrderedList``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-" title="modelLINQ.ListExtension.BindOrderedList``4(System.Linq.Expressions.Expression,System.String,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean)">BindOrderedList``4(param,bindingPropertyName,paramPropertyName,orderByProperty,bindingGenerator,desc)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindSelectedList``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-" title="modelLINQ.ListExtension.BindSelectedList``3(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]})">BindSelectedList``3(param,bindingPropertyName,bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindSelectedList``3-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-" title="modelLINQ.ListExtension.BindSelectedList``3(System.Linq.Expressions.Expression,System.String,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]})">BindSelectedList``3(param,bindingPropertyName,paramPropertyName,bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindSelectedPropertyItem``3-System-Linq-Expressions-Expression,System-String,System-String-" title="modelLINQ.ListExtension.BindSelectedPropertyItem``3(System.Linq.Expressions.Expression,System.String,System.String)">BindSelectedPropertyItem``3(param,bindingPropertyName,propertyToBind)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindSelectedPropertyItem``3-System-Linq-Expressions-Expression,System-String,System-String,System-String-" title="modelLINQ.ListExtension.BindSelectedPropertyItem``3(System.Linq.Expressions.Expression,System.String,System.String,System.String)">BindSelectedPropertyItem``3(param,bindingPropertyName,selectOnPropertyName,propertyToBind)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindSelectedPropertyList``3-System-Linq-Expressions-Expression,System-String,System-String-" title="modelLINQ.ListExtension.BindSelectedPropertyList``3(System.Linq.Expressions.Expression,System.String,System.String)">BindSelectedPropertyList``3(param,bindingPropertyName,propertyToBind)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindSelectedPropertyList``3-System-Linq-Expressions-Expression,System-String,System-String,System-String-" title="modelLINQ.ListExtension.BindSelectedPropertyList``3(System.Linq.Expressions.Expression,System.String,System.String,System.String)">BindSelectedPropertyList``3(param,bindingPropertyName,selectOnPropertyName,propertyToBind)</a></li>
+<li><a href="#M-modelLINQ-ListExtension-BindSelectedProperty``3-System-Linq-Expressions-Expression,System-String,System-String,System-Boolean-" title="modelLINQ.ListExtension.BindSelectedProperty``3(System.Linq.Expressions.Expression,System.String,System.String,System.Boolean)">BindSelectedProperty``3(param,bindingPropertyName,propertyToBind)</a></li>
+<li><a href="#T-modelLINQ-MethodExtension" title="modelLINQ.MethodExtension">MethodExtension</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-GetOrderBy-System-Boolean-" title="modelLINQ.MethodExtension.GetOrderBy(System.Boolean)">GetOrderBy(desc)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-GetSelect" title="modelLINQ.MethodExtension.GetSelect">GetSelect()</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-GetWhere" title="modelLINQ.MethodExtension.GetWhere">GetWhere()</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-SelectProperty``2-System-Linq-Expressions-Expression,System-String,System-String,System-Boolean-" title="modelLINQ.MethodExtension.SelectProperty``2(System.Linq.Expressions.Expression,System.String,System.String,System.Boolean)">SelectProperty``2(param,propertyName,sourceName,asList)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-Select``2-System-Linq-Expressions-Expression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-String,System-Boolean-" title="modelLINQ.MethodExtension.Select``2(System.Linq.Expressions.Expression,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.String,System.String,System.Boolean)">Select``2(bindingParam,predicate,assigments,predicateSourceName,selectSourceName,asList)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-Select``2-System-Linq-Expressions-MethodCallExpression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-Boolean-" title="modelLINQ.MethodExtension.Select``2(System.Linq.Expressions.MethodCallExpression,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.String,System.Boolean)">Select``2(predicate,assigments,sourceName,asList)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-Select``2-System-Linq-Expressions-Expression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-Boolean-" title="modelLINQ.MethodExtension.Select``2(System.Linq.Expressions.Expression,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.String,System.Boolean)">Select``2(param,assigments,sourceName,asList)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-Select``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-String,System-Boolean,System-Boolean-" title="modelLINQ.MethodExtension.Select``3(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.String,System.String,System.Boolean,System.Boolean)">Select``3(bindingParam,orderByProperty,predicate,assigments,predicateSourceName,selectSourceName,desc,asList)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-Select``3-System-Linq-Expressions-MethodCallExpression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean,System-String,System-Boolean-" title="modelLINQ.MethodExtension.Select``3(System.Linq.Expressions.MethodCallExpression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.Boolean,System.String,System.Boolean)">Select``3(predicate,orderByProperty,assigments,sourceName,desc,asList)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-Select``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-Boolean,System-Boolean-" title="modelLINQ.MethodExtension.Select``3(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.String,System.Boolean,System.Boolean)">Select``3(param,orderBy,assigments,sourceName,desc,asList)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-WherePredictate``1-System-Linq-Expressions-Expression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-String-" title="modelLINQ.MethodExtension.WherePredictate``1(System.Linq.Expressions.Expression,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.String)">WherePredictate``1(bindingParam,predicate,paramName)</a></li>
+<li><a href="#M-modelLINQ-MethodExtension-WherePredictate``1-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-String-" title="modelLINQ.MethodExtension.WherePredictate``1(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression},System.String)">WherePredictate``1(param,paramPropertyName,predicate,paramName)</a></li>
+<li><a href="#T-modelLINQ-ModelExtension" title="modelLINQ.ModelExtension">ModelExtension</a></li>
+<li><a href="#M-modelLINQ-ModelExtension-AsModel``2" title="modelLINQ.ModelExtension.AsModel``2">AsModel``2()</a></li>
+<li><a href="#M-modelLINQ-ModelExtension-GenerateModel``2-``0-" title="modelLINQ.ModelExtension.GenerateModel``2(``0)">GenerateModel``2(sourceObject)</a></li>
+<li><a href="#M-modelLINQ-ModelExtension-Model``2-System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberBinding[]}-" title="modelLINQ.ModelExtension.Model``2(System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberBinding[]})">Model``2(bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ModelExtension-Model``2-System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberBinding[]},System-String-" title="modelLINQ.ModelExtension.Model``2(System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberBinding[]},System.String)">Model``2(bindingGenerator,paramName)</a></li>
+<li><a href="#M-modelLINQ-ModelExtension-NullModelCondition``2-System-Linq-Expressions-Expression,System-Linq-Expressions-MemberInitExpression-" title="modelLINQ.ModelExtension.NullModelCondition``2(System.Linq.Expressions.Expression,System.Linq.Expressions.MemberInitExpression)">NullModelCondition``2(param,memberInit)</a></li>
+<li><a href="#T-modelLINQ-ObjectExtension" title="modelLINQ.ObjectExtension">ObjectExtension</a></li>
+<li><a href="#M-modelLINQ-ObjectExtension-ObjectBind``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-" title="modelLINQ.ObjectExtension.ObjectBind``3(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]})">ObjectBind``3(param,bindingProperty,bindingGenerator)</a></li>
+<li><a href="#M-modelLINQ-ObjectExtension-ObjectBind``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String[]-" title="modelLINQ.ObjectExtension.ObjectBind``3(System.Linq.Expressions.Expression,System.String,System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]},System.String[])">ObjectBind``3(param,bindingProperty,bindingGenerator,propertyNames)</a></li>
+</ul>
+<p><a name='T-modelLINQ-BindingExtension'></a> ## BindingExtension <code>type</code></p>
+<h5 id="namespace">Namespace</h5>
+<p>modelLINQ</p>
+<p><a name='M-modelLINQ-BindingExtension-DirectBind``1-System-Linq-Expressions-Expression-'></a> ### DirectBind``1(param) <code>method</code></p>
+<h5 id="summary">Summary</h5>
+<p>Gets the direct mapping assignments from one source param to a TResult, ignoring properties that don't exist on both</p>
+<h5 id="returns">Returns</h5>
+<p>An assignment array of all the properties</p>
+<h5 id="parameters">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source param of the mapping</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TResult</td>
+<td align="left">The result of the mapping</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-BindingExtension-DirectBind``1-System-Linq-Expressions-Expression,System-String-'></a> ### DirectBind``1(param,propName) <code>method</code></p>
+<h5 id="summary-1">Summary</h5>
+<p>Directly bind the same property from the source to the result</p>
+<h5 id="returns-1">Returns</h5>
+<p>A member assignment of the direct binding</p>
+<h5 id="parameters-1">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source parameter expression</td>
+</tr>
+<tr class="even">
+<td align="left">propName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property we are binding</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-1">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TResult</td>
+<td align="left">The object we are binding the property to</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-BindingExtension-DirectBind``1-System-Linq-Expressions-Expression,System-String,System-String[]-'></a> ### DirectBind``1(param,bindPropname,propNames) <code>method</code></p>
+<h5 id="summary-2">Summary</h5>
+<p>Direct bind on sublevel properties as many names that are passed through</p>
+<h5 id="returns-2">Returns</h5>
+<p>A binding of the sub param on the bind prop name</p>
+<h5 id="parameters-2">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The top level param we will get the sub property from</td>
+</tr>
+<tr class="even">
+<td align="left">bindPropname</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property to bind the param on</td>
+</tr>
+<tr class="odd">
+<td align="left">propNames</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String[]" title="System.String[]">System.String[]</a></td>
+<td align="left">The property names we will expand</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-2">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result we are binding to</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-BindingExtension-PropertyHasValue``2-System-Linq-Expressions-Expression,System-String,System-String-'></a> ### PropertyHasValue``2(param,propName,bindToPropertyName) <code>method</code></p>
+<h5 id="summary-3">Summary</h5>
+<p>Binds to the property as a terinary statement with null backing if it is null</p>
+<h5 id="returns-3">Returns</h5>
+<p>The ternirary binding with the item or null</p>
+<h5 id="parameters-3">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param of the property we are creating terinary for</td>
+</tr>
+<tr class="even">
+<td align="left">propName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the type to do the check against</td>
+</tr>
+<tr class="odd">
+<td align="left">bindToPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name we are binding to</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-3">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindTo</td>
+<td align="left">The type we are binding the statement to</td>
+</tr>
+<tr class="even">
+<td align="left">TProperty</td>
+<td align="left">The type of the property we are checking</td>
+</tr>
+</tbody>
+</table>
+<p><a name='T-modelLINQ-ListExtension'></a> ## ListExtension <code>type</code></p>
+<h5 id="namespace-1">Namespace</h5>
+<p>modelLINQ</p>
+<p><a name='M-modelLINQ-ListExtension-BindFilteredItem``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-'></a> ### BindFilteredItem``3(param,bindingPropertyName,predicateGenerator,bindingGenerator) <code>method</code></p>
+<h5 id="summary-4">Summary</h5>
+<p>Selects a item from a list with a predicate to filter on</p>
+<h5 id="returns-4">Returns</h5>
+<p>A filitered item of TSelectResult</p>
+<h5 id="parameters-4">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param of the source</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the parent to bind on</td>
+</tr>
+<tr class="odd">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate generator</td>
+</tr>
+<tr class="even">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The results binding generator</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-4">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent model we are selecting on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The soruce of the select</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindFilteredItem``3-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-'></a> ### BindFilteredItem``3(param,bindingPropertyName,paramPropertyName,predicateGenerator,bindingGenerator) <code>method</code></p>
+<h5 id="summary-5">Summary</h5>
+<p>Selects a item from a list with a predicate to filter on</p>
+<h5 id="returns-5">Returns</h5>
+<p>A filitered item of TSelectResult</p>
+<h5 id="parameters-5">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param of the source</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the parent to bind on</td>
+</tr>
+<tr class="odd">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the source param to filter on</td>
+</tr>
+<tr class="even">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate generator</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The results binding generator</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-5">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent model we are selecting on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The soruce of the select</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindFilteredList``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-'></a> ### BindFilteredList``3(param,bindingPropertyName,predicateGenerator,bindingGenerator) <code>method</code></p>
+<h5 id="summary-6">Summary</h5>
+<p>Selects a list with a predicate to filter on</p>
+<h5 id="returns-6">Returns</h5>
+<p>A filitered list of TResults</p>
+<h5 id="parameters-6">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param of the source</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the parent to bind on</td>
+</tr>
+<tr class="odd">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate generator</td>
+</tr>
+<tr class="even">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The results binding generator</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-6">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent model we are selecting on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The soruce of the select</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindFilteredList``3-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-'></a> ### BindFilteredList``3(param,bindingPropertyName,paramPropertyName,predicateGenerator,bindingGenerator) <code>method</code></p>
+<h5 id="summary-7">Summary</h5>
+<p>Selects a list with a predicate to filter on</p>
+<h5 id="returns-7">Returns</h5>
+<p>A filitered list of TResults</p>
+<h5 id="parameters-7">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param of the source</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the parent to bind on</td>
+</tr>
+<tr class="odd">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the param that is being filtered</td>
+</tr>
+<tr class="even">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate generator</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The results binding generator</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-7">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent model we are selecting on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The soruce of the select</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedFilteredItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedFilteredItem``4(param,bindingPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-8">Summary</h5>
+<p>Generates an item from a ordered list grabing the first item in the newly ordered list</p>
+<h5 id="returns-8">Returns</h5>
+<p>A item of TSelectResult from a list filtered and ordered</p>
+<h5 id="parameters-8">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source param we are filtering the list on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The binding property of the source</td>
+</tr>
+<tr class="odd">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property on TSelectSource we are ordering on</td>
+</tr>
+<tr class="even">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The filtering generator function</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assigment generator</td>
+</tr>
+<tr class="even">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we are descending the ordering</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-8">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The type we are ordering on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedFilteredItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedFilteredItem``4(param,bindingPropertyName,paramPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-9">Summary</h5>
+<p>Generates an item from a ordered list grabing the first item in the newly ordered list</p>
+<h5 id="returns-9">Returns</h5>
+<p>A item of TSelectResult from a list filtered and ordered</p>
+<h5 id="parameters-9">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source param we are filtering the list on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The binding property of the source</td>
+</tr>
+<tr class="odd">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property on the source</td>
+</tr>
+<tr class="even">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property on TSelectSource we are ordering on</td>
+</tr>
+<tr class="odd">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The filtering generator function</td>
+</tr>
+<tr class="even">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assigment generator</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we are descending the ordering</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-9">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The type we are ordering on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedFilteredList``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedFilteredList``4(param,bindingPropertyName,paramPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-10">Summary</h5>
+<p>Generates an list from a list by ordering and selecting</p>
+<h5 id="returns-10">Returns</h5>
+<p>An ordered and filtered list of TSelectResult</p>
+<h5 id="parameters-10">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source param we are filtering the list on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The binding property of the source</td>
+</tr>
+<tr class="odd">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property of the list on the source</td>
+</tr>
+<tr class="even">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property we are ordering by on TSelectSource</td>
+</tr>
+<tr class="odd">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The filtering generator function</td>
+</tr>
+<tr class="even">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assigment generator</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we are descending the ordering</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-10">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The type we are ordering on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedFilteredList``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedFilteredList``4(param,bindingPropertyName,orderByProperty,predicateGenerator,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-11">Summary</h5>
+<p>Generates an list from a list by ordering and selecting</p>
+<h5 id="returns-11">Returns</h5>
+<p>An ordered and filtered list of TSelectResult</p>
+<h5 id="parameters-11">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source param we are filtering the list on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The binding property of the source</td>
+</tr>
+<tr class="odd">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property we are ordering by on TSelectSource</td>
+</tr>
+<tr class="even">
+<td align="left">predicateGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The filtering generator function</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assigment generator</td>
+</tr>
+<tr class="even">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we are descending the ordering</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-11">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The type we are ordering on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedItem``4(param,bindingPropertyName,orderByProperty,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-12">Summary</h5>
+<p>Binds a single item from an ordered list</p>
+<h5 id="returns-12">Returns</h5>
+<p>A Binding of a single item to the property from an ordered list</p>
+<h5 id="parameters-12">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source parametere</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The binding property name on the source</td>
+</tr>
+<tr class="odd">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The order by property name</td>
+</tr>
+<tr class="even">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The select bindings generator</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to order by descending</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-12">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The order by type</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedItem``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedItem``4(param,bindingPropertyName,paramPropertyName,orderByProperty,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-13">Summary</h5>
+<p>Binds a single item from an ordered list</p>
+<h5 id="returns-13">Returns</h5>
+<p>A Binding of a single item to the property from an ordered list</p>
+<h5 id="parameters-13">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source parametere</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The binding property name on the source</td>
+</tr>
+<tr class="odd">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the list on the source</td>
+</tr>
+<tr class="even">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The order by property name</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The select bindings generator</td>
+</tr>
+<tr class="even">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to order by descending</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-13">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The order by type</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedList``4-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedList``4(param,bindingPropertyName,orderByProperty,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-14">Summary</h5>
+<p>Binds an ordered list to from a list</p>
+<h5 id="returns-14">Returns</h5>
+<p>A binding assigment of an ordered list</p>
+<h5 id="parameters-14">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source param</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property being bound to</td>
+</tr>
+<tr class="odd">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the order by property</td>
+</tr>
+<tr class="even">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The bindings generator</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If the list is descending</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-14">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The order by type</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindOrderedList``4-System-Linq-Expressions-Expression,System-String,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean-'></a> ### BindOrderedList``4(param,bindingPropertyName,paramPropertyName,orderByProperty,bindingGenerator,desc) <code>method</code></p>
+<h5 id="summary-15">Summary</h5>
+<p>Binds an ordered list to from a list</p>
+<h5 id="returns-15">Returns</h5>
+<p>A binding assigment of an ordered list</p>
+<h5 id="parameters-15">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source param</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property being bound to</td>
+</tr>
+<tr class="odd">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name of the list on the source</td>
+</tr>
+<tr class="even">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the order by property</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The bindings generator</td>
+</tr>
+<tr class="even">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If the list is descending</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-15">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="odd">
+<td align="left">TOrderBy</td>
+<td align="left">The order by type</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindSelectedList``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-'></a> ### BindSelectedList``3(param,bindingPropertyName,bindingGenerator) <code>method</code></p>
+<h5 id="summary-16">Summary</h5>
+<p>Binds a selected list to the binding property name on the TBindingTo from the TSelectSource as a TSelectResult</p>
+<h5 id="returns-16">Returns</h5>
+<p>A memeber assigment of selecting a list of tresult</p>
+<h5 id="parameters-16">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param of the tparent to get the property of</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the binding property</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assigment bindings</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-16">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent object we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the binding result</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result object of the selected</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindSelectedList``3-System-Linq-Expressions-Expression,System-String,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-'></a> ### BindSelectedList``3(param,bindingPropertyName,paramPropertyName,bindingGenerator) <code>method</code></p>
+<h5 id="summary-17">Summary</h5>
+<p>Binds a selected list to the binding property name on the TBindingTo from the TSelectSource as a TSelectResult</p>
+<h5 id="returns-17">Returns</h5>
+<p>A memeber assigment of selecting a list of tresult</p>
+<h5 id="parameters-17">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param of the tparent to get the property of</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the binding property</td>
+</tr>
+<tr class="odd">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property of the param to select on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assigment bindings</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-17">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent object we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the binding result</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result object of the selected</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindSelectedPropertyItem``3-System-Linq-Expressions-Expression,System-String,System-String-'></a> ### BindSelectedPropertyItem``3(param,bindingPropertyName,propertyToBind) <code>method</code></p>
+<h5 id="summary-18">Summary</h5>
+<p>Bind on selected property of a given list item as a single item</p>
+<h5 id="returns-18">Returns</h5>
+<p>An expression tree of the select binding</p>
+<h5 id="parameters-18">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The parameter to generate the binding on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name on the binding model</td>
+</tr>
+<tr class="odd">
+<td align="left">propertyToBind</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property to selet</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-18">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The type we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source we are binding to</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of select type</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindSelectedPropertyItem``3-System-Linq-Expressions-Expression,System-String,System-String,System-String-'></a> ### BindSelectedPropertyItem``3(param,bindingPropertyName,selectOnPropertyName,propertyToBind) <code>method</code></p>
+<h5 id="summary-19">Summary</h5>
+<p>Bind on selected property of a given list item as a single item</p>
+<h5 id="returns-19">Returns</h5>
+<p>An expression tree of the select binding</p>
+<h5 id="parameters-19">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The parameter to generate the binding on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name on the binding model</td>
+</tr>
+<tr class="odd">
+<td align="left">selectOnPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">Selects the property on the param before building</td>
+</tr>
+<tr class="even">
+<td align="left">propertyToBind</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property to selet</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-19">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The type we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source we are binding to</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of select type</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindSelectedPropertyList``3-System-Linq-Expressions-Expression,System-String,System-String-'></a> ### BindSelectedPropertyList``3(param,bindingPropertyName,propertyToBind) <code>method</code></p>
+<h5 id="summary-20">Summary</h5>
+<p>Bind on selected property of a given list item as a list</p>
+<h5 id="returns-20">Returns</h5>
+<p>An expression tree of the select binding</p>
+<h5 id="parameters-20">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The parameter to generate the binding on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name on the binding model</td>
+</tr>
+<tr class="odd">
+<td align="left">propertyToBind</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property to selet</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-20">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The type we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source we are binding to</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of select type</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindSelectedPropertyList``3-System-Linq-Expressions-Expression,System-String,System-String,System-String-'></a> ### BindSelectedPropertyList``3(param,bindingPropertyName,selectOnPropertyName,propertyToBind) <code>method</code></p>
+<h5 id="summary-21">Summary</h5>
+<p>Bind on selected property of a given list item as a list</p>
+<h5 id="returns-21">Returns</h5>
+<p>An expression tree of the select binding</p>
+<h5 id="parameters-21">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The parameter to generate the binding on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name on the binding model</td>
+</tr>
+<tr class="odd">
+<td align="left">selectOnPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name to get on the param before building</td>
+</tr>
+<tr class="even">
+<td align="left">propertyToBind</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property to selet</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-21">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The type we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source we are binding to</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of select type</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ListExtension-BindSelectedProperty``3-System-Linq-Expressions-Expression,System-String,System-String,System-Boolean-'></a> ### BindSelectedProperty``3(param,bindingPropertyName,propertyToBind) <code>method</code></p>
+<h5 id="summary-22">Summary</h5>
+<p>Bind on selected property of a given list item as a list or a single item</p>
+<h5 id="returns-22">Returns</h5>
+<p>An expression tree of the select binding</p>
+<h5 id="parameters-22">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The parameter to generate the binding on</td>
+</tr>
+<tr class="even">
+<td align="left">bindingPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name on the binding model</td>
+</tr>
+<tr class="odd">
+<td align="left">propertyToBind</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property to selet</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-22">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The type we are binding to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source we are binding to</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of select type</td>
+</tr>
+</tbody>
+</table>
+<p><a name='T-modelLINQ-MethodExtension'></a> ## MethodExtension <code>type</code></p>
+<h5 id="namespace-2">Namespace</h5>
+<p>modelLINQ</p>
+<p><a name='M-modelLINQ-MethodExtension-GetOrderBy-System-Boolean-'></a> ### GetOrderBy(desc) <code>method</code></p>
+<h5 id="summary-23">Summary</h5>
+<p>Gets the order by method info off enumerable</p>
+<h5 id="returns-23">Returns</h5>
+<p>Order by Method Info</p>
+<h5 id="parameters-23">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to descend</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-GetSelect'></a> ### GetSelect() <code>method</code></p>
+<h5 id="summary-24">Summary</h5>
+<p>Gets the select method info from Enumerable</p>
+<h5 id="returns-24">Returns</h5>
+<p>The select method info</p>
+<h5 id="parameters-24">Parameters</h5>
+<p>This method has no parameters.</p>
+<p><a name='M-modelLINQ-MethodExtension-GetWhere'></a> ### GetWhere() <code>method</code></p>
+<h5 id="summary-25">Summary</h5>
+<p>Gets IEnumerables where MethodInfo</p>
+<h5 id="returns-25">Returns</h5>
+<p>The where MethodInfo</p>
+<h5 id="parameters-25">Parameters</h5>
+<p>This method has no parameters.</p>
+<p><a name='M-modelLINQ-MethodExtension-SelectProperty``2-System-Linq-Expressions-Expression,System-String,System-String,System-Boolean-'></a> ### SelectProperty``2(param,propertyName,sourceName,asList) <code>method</code></p>
+<h5 id="summary-26">Summary</h5>
+<p>Selects a property from a lisst</p>
+<h5 id="returns-26">Returns</h5>
+<p>The selects method call expression</p>
+<h5 id="parameters-26">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The select parameter</td>
+</tr>
+<tr class="even">
+<td align="left">propertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property on the TSource we are selecting</td>
+</tr>
+<tr class="odd">
+<td align="left">sourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the select source</td>
+</tr>
+<tr class="even">
+<td align="left">asList</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we need to generate a list or get a single item</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-23">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectSource</td>
+<td align="left">The source type of the select</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result type of the select</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-Select``2-System-Linq-Expressions-Expression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-String,System-Boolean-'></a> ### Select``2(bindingParam,predicate,assigments,predicateSourceName,selectSourceName,asList) <code>method</code></p>
+<h5 id="summary-27">Summary</h5>
+<p>Selects a list of items into another list of results filtered by a where predicate</p>
+<h5 id="returns-27">Returns</h5>
+<p>A filitered list of TSelectResult</p>
+<h5 id="parameters-27">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bindingParam</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The binding param of the predicate</td>
+</tr>
+<tr class="even">
+<td align="left">predicate</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate to filter the results on</td>
+</tr>
+<tr class="odd">
+<td align="left">assigments</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assignments of the result</td>
+</tr>
+<tr class="even">
+<td align="left">predicateSourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The predicate source name override</td>
+</tr>
+<tr class="odd">
+<td align="left">selectSourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The source name override</td>
+</tr>
+<tr class="even">
+<td align="left">asList</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to select as a list</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-24">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list of items</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the list of items</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-Select``2-System-Linq-Expressions-MethodCallExpression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-Boolean-'></a> ### Select``2(predicate,assigments,sourceName,asList) <code>method</code></p>
+<h5 id="summary-28">Summary</h5>
+<p>Selects a list of items into another list of results filtered by a where predicate</p>
+<h5 id="returns-28">Returns</h5>
+<p>A filitered list/item of TSelectResult</p>
+<h5 id="parameters-28">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">predicate</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.MethodCallExpression" title="System.Linq.Expressions.MethodCallExpression">System.Linq.Expressions.MethodCallExpression</a></td>
+<td align="left">The predicate to filter the results on</td>
+</tr>
+<tr class="even">
+<td align="left">assigments</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The assignments of the result</td>
+</tr>
+<tr class="odd">
+<td align="left">sourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The source name override</td>
+</tr>
+<tr class="even">
+<td align="left">asList</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to select a list of items</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-25">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list of items</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the list of items</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-Select``2-System-Linq-Expressions-Expression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-Boolean-'></a> ### Select``2(param,assigments,sourceName,asList) <code>method</code></p>
+<h5 id="summary-29">Summary</h5>
+<p>Selects a sub item off the expression and utilizing the member assignments creates a list of objects</p>
+<h5 id="returns-29">Returns</h5>
+<p>A list of TResults MethodCallExpression</p>
+<h5 id="parameters-29">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The expression param that contains the property to sellect off</td>
+</tr>
+<tr class="even">
+<td align="left">assigments</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The member assignments to generate the model from the parm</td>
+</tr>
+<tr class="odd">
+<td align="left">sourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">Lets you override the source name if necessary of the lambda select body</td>
+</tr>
+<tr class="even">
+<td align="left">asList</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to select as a list</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-26">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list of items to select on</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectResult</td>
+<td align="left">The result model the list will contain</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-Select``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-String,System-Boolean,System-Boolean-'></a> ### Select``3(bindingParam,orderByProperty,predicate,assigments,predicateSourceName,selectSourceName,desc,asList) <code>method</code></p>
+<h5 id="summary-30">Summary</h5>
+<p>Selects a list of items that are filtered by the given predicate and ordered by the ordering expression, and finally selecting the TResults by the bindings</p>
+<h5 id="returns-30">Returns</h5>
+<p>A list of filtered and ordered TResults</p>
+<h5 id="parameters-30">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bindingParam</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The parameter to bind on</td>
+</tr>
+<tr class="even">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property that is being ordered on</td>
+</tr>
+<tr class="odd">
+<td align="left">predicate</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate generator</td>
+</tr>
+<tr class="even">
+<td align="left">assigments</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The select generator</td>
+</tr>
+<tr class="odd">
+<td align="left">predicateSourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The predicate source name override</td>
+</tr>
+<tr class="even">
+<td align="left">selectSourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The select source name override</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we are descending the ordering</td>
+</tr>
+<tr class="even">
+<td align="left">asList</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we are selecting as a list</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-27">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list</td>
+</tr>
+<tr class="even">
+<td align="left">TOrderBy</td>
+<td align="left">The type of the ordering</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result to select on</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-Select``3-System-Linq-Expressions-MethodCallExpression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-Boolean,System-String,System-Boolean-'></a> ### Select``3(predicate,orderByProperty,assigments,sourceName,desc,asList) <code>method</code></p>
+<h5 id="summary-31">Summary</h5>
+<p>Selects a sub item off the expression and utilizing the member assignments creates a list of objects</p>
+<h5 id="returns-31">Returns</h5>
+<p>A filtered orderd list/item of TResults MethodCallExpression</p>
+<h5 id="parameters-31">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">predicate</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.MethodCallExpression" title="System.Linq.Expressions.MethodCallExpression">System.Linq.Expressions.MethodCallExpression</a></td>
+<td align="left">The where predicate of the items</td>
+</tr>
+<tr class="even">
+<td align="left">orderByProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The order by property</td>
+</tr>
+<tr class="odd">
+<td align="left">assigments</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The member assignments to generate the model from the parm</td>
+</tr>
+<tr class="even">
+<td align="left">sourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">Lets you override the source name if necessary of the lambda select body</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">If we are ordering by descending</td>
+</tr>
+<tr class="even">
+<td align="left">asList</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to select as a list</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-28">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list of items to select on</td>
+</tr>
+<tr class="even">
+<td align="left">TOrderBy</td>
+<td align="left">The ordering by type</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result model the list will contain</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-Select``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String,System-Boolean,System-Boolean-'></a> ### Select``3(param,orderBy,assigments,sourceName,desc,asList) <code>method</code></p>
+<h5 id="summary-32">Summary</h5>
+<p>Selects a sub item off the expression and utilizing the member assignments creates a list of objects</p>
+<h5 id="returns-32">Returns</h5>
+<p>A orderd list of TResults MethodCallExpression</p>
+<h5 id="parameters-32">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The expression param that contains the property to sellect off</td>
+</tr>
+<tr class="even">
+<td align="left">orderBy</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The order by expression</td>
+</tr>
+<tr class="odd">
+<td align="left">assigments</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The member assignments to generate the model from the parm</td>
+</tr>
+<tr class="even">
+<td align="left">sourceName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">Lets you override the source name if necessary of the lambda select body</td>
+</tr>
+<tr class="odd">
+<td align="left">desc</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we are ordering by descending</td>
+</tr>
+<tr class="even">
+<td align="left">asList</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Boolean" title="System.Boolean">System.Boolean</a></td>
+<td align="left">If we want to select as a list</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-29">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the list of items to select on</td>
+</tr>
+<tr class="even">
+<td align="left">TOrderBy</td>
+<td align="left">The ordering by type</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result model the list will contain</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-WherePredictate``1-System-Linq-Expressions-Expression,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-String-'></a> ### WherePredictate``1(bindingParam,predicate,paramName) <code>method</code></p>
+<h5 id="summary-33">Summary</h5>
+<p>Generates a where predicate in order to filter a list down by the function predicate, generally to be selected or to listed</p>
+<h5 id="returns-33">Returns</h5>
+<p>A filtered list</p>
+<h5 id="parameters-33">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bindingParam</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The binding param of the list</td>
+</tr>
+<tr class="even">
+<td align="left">predicate</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate generator function</td>
+</tr>
+<tr class="odd">
+<td align="left">paramName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The override of the source param name</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-30">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSource</td>
+<td align="left">The source of the list to filter</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-MethodExtension-WherePredictate``1-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-Expression},System-String-'></a> ### WherePredictate``1(param,paramPropertyName,predicate,paramName) <code>method</code></p>
+<h5 id="summary-34">Summary</h5>
+<p>Generates a where predicate in order to filter a list down by the function predicate binding from the param property name generally to be selected or to listed</p>
+<h5 id="returns-34">Returns</h5>
+<p>A filtered list</p>
+<h5 id="parameters-34">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The binding parent param</td>
+</tr>
+<tr class="even">
+<td align="left">paramPropertyName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The property name to get the binding</td>
+</tr>
+<tr class="odd">
+<td align="left">predicate</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression}</a></td>
+<td align="left">The predicate generator</td>
+</tr>
+<tr class="even">
+<td align="left">paramName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The param name</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-31">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSource</td>
+<td align="left">The source of the list</td>
+</tr>
+</tbody>
+</table>
+<p><a name='T-modelLINQ-ModelExtension'></a> ## ModelExtension <code>type</code></p>
+<h5 id="namespace-3">Namespace</h5>
+<p>modelLINQ</p>
+<p><a name='M-modelLINQ-ModelExtension-AsModel``2'></a> ### AsModel``2() <code>method</code></p>
+<h5 id="summary-35">Summary</h5>
+<p>Directly maps one type to another type</p>
+<h5 id="returns-35">Returns</h5>
+<p>A function for direct mapping</p>
+<h5 id="parameters-35">Parameters</h5>
+<p>This method has no parameters.</p>
+<h5 id="generic-types-32">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSource</td>
+<td align="left">The source type of the mapping</td>
+</tr>
+<tr class="even">
+<td align="left">TResult</td>
+<td align="left">The result type of the mapping</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ModelExtension-GenerateModel``2-``0-'></a> ### GenerateModel``2(sourceObject) <code>method</code></p>
+<h5 id="summary-36">Summary</h5>
+<p>Maps over a TSource to a TResult by creating a list of the individual object and utilizing the member assignments to project the TResult.</p>
+<h5 id="returns-36">Returns</h5>
+<p>An instance of TResult</p>
+<h5 id="parameters-36">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">sourceObject</td>
+<td align="left"><a href="#T-``0" title="``0">``0</a></td>
+<td align="left">The source object we are mapping over to the TResult</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-33">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSource</td>
+<td align="left">The source of the generation</td>
+</tr>
+<tr class="even">
+<td align="left">TResult</td>
+<td align="left">The result of the generation</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ModelExtension-Model``2-System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberBinding[]}-'></a> ### Model``2(bindingGenerator) <code>method</code></p>
+<h5 id="summary-37">Summary</h5>
+<p>Proxy method for generating a new member expression, just for saving on typing each time a new model is needing to be generated</p>
+<h5 id="returns-37">Returns</h5>
+<p>A func of the model being generated</p>
+<h5 id="parameters-37">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberBinding[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberBinding[]}</a></td>
+<td align="left">A function that generates the necessary bindings of the model from the source</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-34">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSource</td>
+<td align="left">The source of the model whom gets passed down to the bindings</td>
+</tr>
+<tr class="even">
+<td align="left">TResult</td>
+<td align="left">The result of the new expression init</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ModelExtension-Model``2-System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberBinding[]},System-String-'></a> ### Model``2(bindingGenerator,paramName) <code>method</code></p>
+<h5 id="summary-38">Summary</h5>
+<p>Proxy method for generating a new member expression, just for saving on typing each time a new model is needing to be generated</p>
+<h5 id="returns-38">Returns</h5>
+<p>A new expression lamaba of the model being generated</p>
+<h5 id="parameters-38">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberBinding[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberBinding[]}</a></td>
+<td align="left">A function that generates the necessary bindings of the model from the source</td>
+</tr>
+<tr class="even">
+<td align="left">paramName</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">If you want to overide the name of the source, otherwise default to source</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-35">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSource</td>
+<td align="left">The source of the model whom gets passed down to the bindings</td>
+</tr>
+<tr class="even">
+<td align="left">TResult</td>
+<td align="left">The result of the new expression init</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ModelExtension-NullModelCondition``2-System-Linq-Expressions-Expression,System-Linq-Expressions-MemberInitExpression-'></a> ### NullModelCondition``2(param,memberInit) <code>method</code></p>
+<h5 id="summary-39">Summary</h5>
+<p>Generates an expression conditional that checks if the source is null before adding the new memeber init expression</p>
+<h5 id="returns-39">Returns</h5>
+<p>A conditional expression that is binds null or a memberinit</p>
+<h5 id="parameters-39">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The param we are null checking</td>
+</tr>
+<tr class="even">
+<td align="left">memberInit</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.MemberInitExpression" title="System.Linq.Expressions.MemberInitExpression">System.Linq.Expressions.MemberInitExpression</a></td>
+<td align="left">The member init function to generate if sourece is not null</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-36">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TSource</td>
+<td align="left">The source we are checking if null</td>
+</tr>
+<tr class="even">
+<td align="left">TResult</td>
+<td align="left">The result we will bind as null if the source is null</td>
+</tr>
+</tbody>
+</table>
+<p><a name='T-modelLINQ-ObjectExtension'></a> ## ObjectExtension <code>type</code></p>
+<h5 id="namespace-4">Namespace</h5>
+<p>modelLINQ</p>
+<p><a name='M-modelLINQ-ObjectExtension-ObjectBind``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]}-'></a> ### ObjectBind``3(param,bindingProperty,bindingGenerator) <code>method</code></p>
+<h5 id="summary-40">Summary</h5>
+<p>Binds an object decleration to result, checking if the source is null and if it is putting a null in stead of the member init expression</p>
+<h5 id="returns-40">Returns</h5>
+<p>An object bound memberassignment on either null or the new model</p>
+<h5 id="parameters-40">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source parameter expression</td>
+</tr>
+<tr class="even">
+<td align="left">bindingProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property on the parent we are binding to</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The member generator of the new member init, if null check passes on the source</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-37">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent object of the binding where we are binding the result to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the object bind</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the object bind</td>
+</tr>
+</tbody>
+</table>
+<h5 id="exceptions">Exceptions</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Exception" title="System.Exception">System.Exception</a></td>
+<td align="left">If parent lacks binding property</td>
+</tr>
+</tbody>
+</table>
+<p><a name='M-modelLINQ-ObjectExtension-ObjectBind``3-System-Linq-Expressions-Expression,System-String,System-Func{System-Linq-Expressions-Expression,System-Linq-Expressions-MemberAssignment[]},System-String[]-'></a> ### ObjectBind``3(param,bindingProperty,bindingGenerator,propertyNames) <code>method</code></p>
+<h5 id="summary-41">Summary</h5>
+<p>Binds an object decleration to result, checking if the source is null and if it is putting a null in stead of the member init expression</p>
+<h5 id="returns-41">Returns</h5>
+<p>An object bound memberassignment on either null or the new model</p>
+<h5 id="parameters-41">Parameters</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">param</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Linq.Expressions.Expression" title="System.Linq.Expressions.Expression">System.Linq.Expressions.Expression</a></td>
+<td align="left">The source parameter expression</td>
+</tr>
+<tr class="even">
+<td align="left">bindingProperty</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String" title="System.String">System.String</a></td>
+<td align="left">The name of the property on the parent we are binding to</td>
+</tr>
+<tr class="odd">
+<td align="left">bindingGenerator</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Func" title="System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}">System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.MemberAssignment[]}</a></td>
+<td align="left">The member generator of the new member init, if null check passes on the source</td>
+</tr>
+<tr class="even">
+<td align="left">propertyNames</td>
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.String[]" title="System.String[]">System.String[]</a></td>
+<td align="left">The property names to go down from the existing param</td>
+</tr>
+</tbody>
+</table>
+<h5 id="generic-types-38">Generic Types</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">TBindingTo</td>
+<td align="left">The parent object of the binding where we are binding the result to</td>
+</tr>
+<tr class="even">
+<td align="left">TSelectSource</td>
+<td align="left">The source of the object bind</td>
+</tr>
+<tr class="odd">
+<td align="left">TSelectResult</td>
+<td align="left">The result of the object bind</td>
+</tr>
+</tbody>
+</table>
+<h5 id="exceptions-1">Exceptions</h5>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&amp;l=EN-US&amp;k=k:System.Exception" title="System.Exception">System.Exception</a></td>
+<td align="left">If parent lacks binding property</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </body>
+</html>
